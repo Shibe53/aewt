@@ -49,13 +49,12 @@ export function HomeHeader() {
   return (
     <header
       id="home-header"
-      className="relative isolate w-full overflow-hidden bg-white"
+      className="relative isolate w-full overflow-hidden bg-white opacity-98"
       style={{
         height: `${headerHeight}px`,
         transition: "height 120ms ease-out",
       }}
     >
-
       {/* Purple rectangle */}
       <div
         aria-hidden="true"
@@ -66,7 +65,6 @@ export function HomeHeader() {
           clipPath: "polygon(0 0, 100% 0, 65% 100%, 0 45%)",
         }}
       />
-
       {/* Red rectangle */}
       <div
         aria-hidden="true"
@@ -86,12 +84,12 @@ export function HomeHeader() {
         }}
       >
         {/* Logo */}
-        <div className="relative z-10 h-20 w-20 shrink-0 rounded-full border-[6px] border-[#ae1a20] bg-[#facc15] sm:h-24 sm:w-24 lg:h-32 lg:w-32 transition-all duration-500 ease-out hover:scale-110 hover:rotate-6 hover:shadow-[0_0_20px_rgba(174,26,32,0.35)]" />  
+        <div className="relative z-10 h-20 w-20 shrink-0 rounded-full border-[6px] border-[#ae1a20] bg-[#facc15] sm:h-24 sm:w-24 lg:h-32 lg:w-32 transition-all duration-500 ease-out hover:scale-110 hover:shadow-[0_0_20px_rgba(250,204,21,1)]" />  
         {/* Title */}
-        <h1 className="title-appear mt-8 w-full text-center text-[clamp(2rem,4vw,3rem)] font-black leading-[1.05] tracking-tight text-[#171717]">
-          AEWT 2027
+        <h1 className="title-appear mt-8 w-full text-center text-[clamp(2rem,4vw,3rem)] font-black leading-[1.05] tracking-tight text-[#6c0287]">
+          Academic Esports
           <span className="mt-2 block text-[#ae1a20]">
-            Eindhoven
+            World Tournament
           </span>
         </h1>
       </div>

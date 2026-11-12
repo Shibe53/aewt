@@ -17,7 +17,6 @@ export function Footer() {
             <span className="whitespace-nowrap text-base font-black uppercase leading-none tracking-[0.08em] text-white">
               AEWT 2027
             </span>
-
             <span className="mt-0.5 whitespace-nowrap text-[8px] font-bold uppercase leading-none tracking-[0.2em] text-[#ae1a20]">
               Eindhoven
             </span>
@@ -29,7 +28,6 @@ export function Footer() {
             © 2027 AEWT. All rights reserved.
           </p>
         </div>
-
       </div>
     </footer>
   );

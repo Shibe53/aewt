@@ -47,28 +47,8 @@ const editions: Edition[] = [
     ],
   },
   {
-    title: "AEWT 2025 - uhhhhhhhhhhh",
+    title: "AEWT 2024 - Maui",
     color: "#6c0287",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    photos: [
-      {
-        file: "",
-        alt: "",
-      },
-      {
-        file: "",
-        alt: "",
-      },
-      {
-        file: "",
-        alt: "",
-      },
-    ],
-  },
-  {
-    title: "AEWT 2024 - uhhhhhhhhhhhhhhhhhhhhhhhh?????",
-    color: "#ae1a20",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     photos: [

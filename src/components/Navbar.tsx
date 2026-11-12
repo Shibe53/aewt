@@ -57,43 +57,32 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-
-      {/* Top brand accent */}
+      {/* Top accent */}
       <div className="h-[3px] bg-gradient-to-r from-[#ae1a20] to-[#6c0287]" />
-
       <nav className="border-b border-white/10 bg-[#101014]/95 text-white shadow-lg backdrop-blur-xl">
-
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-5 py-3 sm:px-8 lg:px-12">
-
-          {/* Brand - left side */}
           <Link
             to="/"
             className="flex shrink-0 items-center gap-3"
             onClick={() => setMenuOpen(false)}
           >
-
-            {/* Yellow circular logo */}
+            {/* Logo */}
             <div className="h-10 w-10 shrink-0 rounded-full border-[3px] border-[#ae1a20] bg-[#facc15]" />
-
-            {/* Brand title */}
             <div className="flex flex-col">
-              <span className="whitespace-nowrap text-xl font-black uppercase leading-none tracking-[0.08em] text-white">
+              <span className="whitespace-nowrap text-l font-black uppercase leading-none tracking-[0.08em] text-white">
                 AEWT 2027
               </span>
-
               <span className="mt-0.5 whitespace-nowrap text-[9px] font-bold uppercase leading-none tracking-[0.25em] text-[#ae1a20]">
                 Eindhoven
               </span>
             </div>
 
           </Link>
-
-          {/* Desktop navigation - right side */}
+          {/* Desktop navigation  */}
           <div className="hidden items-center gap-3 lg:flex">
             {links.map((link) => renderLink(link))}
           </div>
-
-          {/* Mobile menu button */}
+          {/* Mobile navigation */}
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -134,10 +123,7 @@ export function Navbar() {
               </svg>
             )}
           </button>
-
         </div>
-
-        {/* Mobile navigation */}
         <div
           id="mobile-navigation"
           className={`border-t border-white/10 bg-[#101014] px-5 py-4 lg:hidden ${
@@ -148,7 +134,6 @@ export function Navbar() {
             {links.map((link) => renderLink(link, true))}
           </div>
         </div>
-
       </nav>
     </header>
   );
