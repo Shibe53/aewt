@@ -11,7 +11,7 @@ const links: NavItem[] = [
   { name: "Home", path: "/" },
   { name: "Editions", path: "/editions" },
   { name: "Activities", path: "/activities" },
-  { name: "Info", path: "/info" },
+  { name: "Documents", path: "/documents" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -76,7 +76,6 @@ export function Navbar() {
                 Eindhoven
               </span>
             </div>
-
           </Link>
           {/* Desktop navigation  */}
           <div className="hidden items-center gap-3 lg:flex">

@@ -1,8 +1,5 @@
-
-import { useState } from "react";
-
 const editionImages = import.meta.glob<string>(
-  "../assets/images/editions/**/*.{png,jpg,jpeg,webp,avif}",
+  "../assets/images/editions/*.{png,jpg,JPG,jpeg,webp,avif}",
   {
     eager: true,
     query: "?url",
@@ -22,7 +19,7 @@ type Edition = {
   title: string;
   color: string;
   description: string;
-  photos: EditionPhoto[];
+  photo: EditionPhoto;
 };
 
 const editions: Edition[] = [
@@ -30,70 +27,38 @@ const editions: Edition[] = [
     title: "AEWT 2026 - Sydney",
     color: "#ae1a20",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    photos: [
-      {
-        file: "",
-        alt: "",
-      },
-      {
-        file: "",
-        alt: "",
-      },
-      {
-        file: "",
-        alt: "",
-      },
-    ],
+      "UNSW Sydney hosted the 2026 AEWT, bringing together students from eight leading universities across Europe, Asia, North America and Australia.\n More than 75 competitors took part in its week-long program, showcasing how competitive gaming develops real-world skills such as teamwork, strategy, innovation and problem-solving.\n After an intense week of competition on the Kensington campus, UNSW ADA's team emerged victorious.",
+    photo: {
+      file: "2026.JPG",
+      alt: "Photo of AEWT 2026 winners.",
+    },
   },
   {
     title: "AEWT 2024 - Maui",
     color: "#6c0287",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    photos: [
-      {
-        file: "",
-        alt: "",
-      },
-      {
-        file: "",
-        alt: "",
-      },
-      {
-        file: "",
-        alt: "",
-      },
-    ],
+      "The world came to University of Hawai'i Maui College in December 2024 for the first-ever international academic Esports competition - the first edition of the AEWT. It brought together eight universities from across four countries.\n \"This tournament breaks new ground in how we think about esports in education. We're creating something that has never been done before at this international scale. It is also an excellent opportunity for cultural exchange and networking on a global scale,\" said Rune Andersen, the programme coordinator for academic esports at UiA.",
+    photo: {
+      file: "2024.jpg",
+      alt: "Photo of AEWT 2024 participants.",
+    },
   },
 ];
 
-// individual photo gallery for each edition
 function EditionGallery({
-  photos
+  photo,
 }: {
-  photos: EditionPhoto[];
-  color: string;
+  photo: EditionPhoto;
 }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const changePhoto = (direction: number) => {
-    setActiveIndex((current) =>
-      (current + direction + photos.length) % photos.length
-    );
-  };
-
-  const currentPhoto = photos[activeIndex];
-  const image = currentPhoto ? getPhoto(currentPhoto.file) : undefined;
+  const image = photo.file ? getPhoto(photo.file) : undefined;
 
   return (
     <div className="relative h-[240px] w-full overflow-hidden rounded-xl border border-white/10 bg-[#151515] sm:h-[320px] lg:h-[360px]">
       {/* Current photo */}
       {image ? (
         <img
-          key={image}
           src={image}
-          alt={currentPhoto.alt}
+          alt={photo.alt}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
@@ -102,56 +67,6 @@ function EditionGallery({
         <div className="absolute inset-0 flex items-center justify-center text-xs text-gray-500">
           Photo placeholder
         </div>
-      )}
-      {/* Previous */}
-      {photos.length > 1 && (
-        <>
-          <button
-            type="button"
-            onClick={() => changePhoto(-1)}
-            aria-label="Previous photo"
-            className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-sm transition-colors hover:bg-[#ae1a20]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              className="h-5 w-5"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m15 18-6-6 6-6"
-              />
-            </svg>
-          </button>
-          {/* Next */}
-          <button
-            type="button"
-            onClick={() => changePhoto(1)}
-            aria-label="Next photo"
-            className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white backdrop-blur-sm transition-colors hover:bg-[#6c0287]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              className="h-5 w-5"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m9 18 6-6-6-6"
-              />
-            </svg>
-          </button>
-        </>
       )}
     </div>
   );
@@ -166,7 +81,7 @@ export function Editions() {
           Editions
         </h1>
         <p className="mt-2 text-xs leading-6 text-gray-400 sm:text-sm">
-          Take a look back at previous editions of AEWT. Discover the experiences that have shaped the event over the years.
+          Take a look back at previous editions of AEWT! Every year, the event is held at a different international university.
         </p>
       </div>
       {/* Editions */}
@@ -198,7 +113,7 @@ export function Editions() {
                   {edition.description}
                 </p>
               </div>
-              {/* Photos */}
+              {/* Photo */}
               <div
                 className={
                   index % 2 === 0
@@ -206,10 +121,7 @@ export function Editions() {
                     : "lg:order-1"
                 }
               >
-                <EditionGallery
-                  photos={edition.photos}
-                  color={edition.color}
-                />
+                <EditionGallery photo={edition.photo} />
               </div>
             </div>
           </section>

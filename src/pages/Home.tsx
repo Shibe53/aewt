@@ -2,7 +2,7 @@
 import { HomeHeader } from "../components/HomeHeader";
 
 const homepageImages = import.meta.glob<string>(
-  "../assets/images/*.{png,jpg,jpeg,webp,avif}",
+  "../assets/images/homepage/*.{png,jpg,jpeg,webp,avif}",
   {
     eager: true,
     query: "?url",
@@ -11,8 +11,7 @@ const homepageImages = import.meta.glob<string>(
 );
 
 const getPhoto = (filename: string): string =>
-  homepageImages[`../assets/images/${filename}`] ??
-  homepageImages["../assets/images/man.png"] ??
+  homepageImages[`../assets/images/homepage/${filename}`] ??
   "";
 
 const sections = [
@@ -28,21 +27,21 @@ const sections = [
     color: "#6c0287",
     photo: getPhoto("aewt.jpg"),
     alt: "",
-    text: "A first-of-its-kind global tournament where university teams compete in esports and academic challenges and, thereby, showcasing the best flex players who can think, create, and compete on a world stage."
+    text: "A first-of-its-kind global tournament where university teams compete in esports and academic challenges and, thereby, showcasing the best flex players who can think, create, and compete on a world stage. We showcase talent that will lead digital industries, not just play in them."
   },
   {
     title: "Types of Activities",
     color: "#ae1a20",
-    photo: getPhoto("idk.jpg"),
+    photo: getPhoto("activities.jpg"),
     alt: "",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    text: "AEWT's main event is the Esports Tournament, where participants come together to compete and test their skills in various games. Alongside the tournament, teams also engage in the academic side of esports through challenges that combine creativity and critical thinking, as well as honing their business, game design and debate skills.",
   },
   {
     title: "Explore Eindhoven",
     color: "#6c0287",
-    photo: getPhoto("idk.jpg"),
+    photo: getPhoto("eindhoven.jpg"),
     alt: "",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    text: "Discover Eindhoven, the city hosting this year's edition of AEWT. Known for its innovative and creative technology, Eindhoven has plenty to offer beyond the tournament itself. During downtime between activities, each team can easily explore the city's landmarks using easily accessible public transportation.",
   },
 ];
 
@@ -51,18 +50,18 @@ export function Home() {
     <main className="min-h-screen w-full bg-black text-white">
       <HomeHeader />
       {/* Homepage content */}
-      <div className="mx-auto flex w-full max-w-[1500px] flex-col gap-7 px-5 py-8 sm:gap-9 sm:px-8 lg:gap-11 lg:px-12 lg:py-10">
+      <div className="mx-auto flex w-full max-w-[1400px] flex-col gap-7 px-5 py-8 sm:gap-9 sm:px-8 lg:gap-16 lg:px-12 lg:py-10">
         {sections.map((section, index) => (
           <section
             id={index === 0 ? "about-aewt" : undefined}
-            className={`flex w-full flex-col gap-3 overflow-hidden md:min-h-[270px] md:gap-5 lg:min-h-[300px] ${
+            className={`flex w-full flex-col gap-3 overflow-hidden md:min-h-[270px] md:gap-7 lg:min-h-[300px] ${
               index % 2 === 0
                 ? "md:flex-row"
                 : "md:flex-row-reverse"
             }`}
           >
             {/* Photo */}
-            <div className="group relative min-h-[200px] w-full shrink-0 overflow-hidden rounded-xl border border-white/10 bg-[#171717] md:min-h-[270px] md:w-1/3 lg:min-h-[300px]">
+            <div className="group relative min-h-[200px] w-full shrink-0 overflow-hidden rounded-xl border border-white/10 bg-[#171717] md:min-h-[250px] md:w-1/2 lg:min-h-[400px]">
               <img
                 src={section.photo}
                 alt={section.alt}
@@ -74,14 +73,14 @@ export function Home() {
             </div>
             {/* Text box */}
             <div
-              className="relative flex min-h-[210px] flex-1 flex-col justify-center overflow-hidden rounded-xl p-6 text-white sm:p-8 lg:p-10 opacity-90"
+              className="relative flex min-h-[210px] flex-1 flex-col justify-center overflow-hidden rounded-xl p-6 text-white sm:p-8 lg:p-10"
               style={{ backgroundColor: section.color }}
             >
               <div className="relative z-10 max-w-2xl">
                 <h2 className="mt-2 text-xl font-bold leading-tight text-white sm:text-2xl lg:text-3xl">
                   {section.title}
                 </h2>
-                <p className="mt-3 text-s leading-6 text-white/85 sm:text-sm sm:leading-7">
+                <p className="mt-5 text-s leading-6 text-white/85 sm:text-sm sm:leading-7">
                   {section.text}
                 </p>
               </div>

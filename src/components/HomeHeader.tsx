@@ -84,7 +84,7 @@ export function HomeHeader() {
         }}
       >
         {/* Logo */}
-        <div className="relative z-10 h-20 w-20 shrink-0 rounded-full border-[6px] border-[#ae1a20] bg-[#facc15] sm:h-24 sm:w-24 lg:h-32 lg:w-32 transition-all duration-500 ease-out hover:scale-110 hover:shadow-[0_0_20px_rgba(250,204,21,1)]" />  
+        <div className="relative z-10 h-20 w-20 shrink-0 rounded-full border-[6px] border-[#ae1a20] bg-[#facc15] sm:h-24 sm:w-24 lg:h-32 lg:w-32 transition-all duration-500 ease-out hover:scale-110 hover:shadow-[0_0_20px_rgba(250,204,21,0.95)]" />  
         {/* Title */}
         <h1 className="title-appear mt-8 w-full text-center text-[clamp(2rem,4vw,3rem)] font-black leading-[1.05] tracking-tight text-[#6c0287]">
           Academic Esports
