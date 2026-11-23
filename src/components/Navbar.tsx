@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/images/logo.png";
 
 type NavItem = {
   name: string;
@@ -67,12 +68,16 @@ export function Navbar() {
             onClick={() => setMenuOpen(false)}
           >
             {/* Logo */}
-            <div className="h-10 w-10 shrink-0 rounded-full border-[3px] border-[#ae1a20] bg-[#facc15]" />
+            <img
+              src={logo}
+              alt="AEWT Logo"
+              className="h-10 w-10 shrink-0 rounded-full border-[3px] border-[#ae1a20] object-cover"
+            />
             <div className="flex flex-col">
               <span className="whitespace-nowrap text-l font-black uppercase leading-none tracking-[0.08em] text-white">
                 AEWT 2027
               </span>
-              <span className="mt-0.5 whitespace-nowrap text-[9px] font-bold uppercase leading-none tracking-[0.25em] text-[#ae1a20]">
+              <span className="mt-1 whitespace-nowrap text-[9px] font-bold uppercase leading-none tracking-[0.25em] text-[#ae1a20]">
                 Eindhoven
               </span>
             </div>

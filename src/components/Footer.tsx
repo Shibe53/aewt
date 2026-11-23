@@ -1,5 +1,5 @@
-
 import { Link } from "react-router-dom";
+import logo from "../assets/images/logo.png";
 
 export function Footer() {
   return (
@@ -7,17 +7,21 @@ export function Footer() {
       {/* Top accent */}
       <div className="h-[2px] bg-gradient-to-r from-[#ae1a20] to-[#6c0287]" />
       <div className="mx-auto flex max-w-[1600px] flex-col items-center justify-between gap-5 px-5 py-6 sm:flex-row sm:px-8 lg:px-16">
-        {/* Logo */}
         <Link
           to="/"
           className="flex w-fit items-center gap-2.5"
         >
-          <div className="h-7 w-7 shrink-0 rounded-full border-2 border-[#ae1a20] bg-[#facc15]" />
+          {/* Logo */}
+          <img
+              src={logo}
+              alt="AEWT Logo"
+              className="h-10 w-10 shrink-0 rounded-full border-[3px] border-[#ae1a20] object-cover"
+            />
           <div className="flex flex-col">
             <span className="whitespace-nowrap text-base font-black uppercase leading-none tracking-[0.08em] text-white">
               AEWT 2027
             </span>
-            <span className="mt-0.5 whitespace-nowrap text-[8px] font-bold uppercase leading-none tracking-[0.2em] text-[#ae1a20]">
+            <span className="mt-1 whitespace-nowrap text-[8px] font-bold uppercase leading-none tracking-[0.2em] text-[#ae1a20]">
               Eindhoven
             </span>
           </div>

@@ -22,7 +22,7 @@ const activityTabs: ActivityTab[] = [
         title: "Business Pitch",
         color: "#ae1a20",
         description:
-          "The Business Pitch challenge evaluates teams' ability to develop and present innovative, sustain-able, and actionable ideas that connect the esports and business environments. Participants must demonstrate creativity, analytical thinking, and communication skills as they address real-world challenges. The focus is on strategic innovation, sustainability, and impact, showing how esports can drive transformation in organizations, communities, or industries.",
+          "The Business Pitch challenge evaluates teams' ability to develop and present innovative, sustainable, and actionable ideas that connect the esports and business environments. Participants must demonstrate creativity, analytical thinking, and communication skills as they address real-world challenges. The focus is on strategic innovation, sustainability, and impact, showing how esports can drive transformation in organizations, communities, or industries.",
       },
       {
         title: "Game Jam",
@@ -56,7 +56,7 @@ const activityTabs: ActivityTab[] = [
       },
     ],
   },
-  {
+  /*{
     title: "Other Activities",
     color: "#6c0287",
     sections: [
@@ -73,7 +73,7 @@ const activityTabs: ActivityTab[] = [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi.",
       },
     ],
-  },
+  },*/
 ];
 
 export function Activities() {
@@ -122,7 +122,8 @@ export function Activities() {
         </h1>
 
         <p className="mt-2 text-xs leading-6 text-gray-400 sm:text-sm">
-          Discover the different activities available during AEWT 2027.
+          Curious about the different activities that will happen during AEWT 2027?
+          Below you can find a short description of every activity we have prepared for the participating teams!
         </p>
 
       </div>
