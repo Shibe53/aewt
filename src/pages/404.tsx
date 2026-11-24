@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export function FourOhFour() {
   return (
     <main className="flex min-h-[75vh] w-full flex-col items-center justify-center bg-black px-6 text-center">

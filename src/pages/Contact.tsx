@@ -1,5 +1,6 @@
 
-import { useState, type ChangeEvent, type SyntheticEvent } from "react";
+import { useState } from "react";
+//import { type ChangeEvent, type SyntheticEvent } from "react";
 
 const contactSections = [
   {
@@ -22,13 +23,14 @@ const contactSections = [
 
 export function Contact() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-
+/*
   const [formData, setFormData] = useState({
     email: "",
     subject: "",
     message: "",
   });
-
+  */
+/*
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -44,12 +46,12 @@ export function Contact() {
     console.log("Contact form:", formData);
   };
 
+  const inputStyle =
+    "w-full rounded-lg border border-white/15 bg-[#111111] px-4 py-3 text-sm text-white placeholder-gray-400 outline-none transition focus:border-[#6c0287]";
+*/
   const toggleSection = (id: string) => {
     setActiveSection((current) => current === id ? null : id);
   };
-
-  const inputStyle =
-    "w-full rounded-lg border border-white/15 bg-[#111111] px-4 py-3 text-sm text-white placeholder-gray-400 outline-none transition focus:border-[#6c0287]";
 
   return (
     <main className="min-h-screen w-full bg-black text-white">
