@@ -1,4 +1,3 @@
-
 import { HomeHeader } from "../components/HomeHeader";
 
 const homepageImages = import.meta.glob<string>(
@@ -11,8 +10,7 @@ const homepageImages = import.meta.glob<string>(
 );
 
 const getPhoto = (filename: string): string =>
-  homepageImages[`../assets/images/homepage/${filename}`] ??
-  "";
+  homepageImages[`../assets/images/homepage/${filename}`];
 
 const sections = [
   {
@@ -20,6 +18,7 @@ const sections = [
     color: "#ae1a20",
     photo: getPhoto("academic_esports.jpg"),
     alt: "",
+    photoCredit: "Thomas Zeng",
     text: "Academic Esports integrates competitive gaming with education, research, and innovation. It uses gameful, human-centered, and design-driven learning to foster creativity, collaboration, and critical thinking. Esports is framed as a laboratory for developing transferable skills and intercultural competence."
   },
   {
@@ -27,6 +26,7 @@ const sections = [
     color: "#6c0287",
     photo: getPhoto("aewt.jpg"),
     alt: "",
+    photoCredit: "Thomas Zeng",
     text: "A first-of-its-kind global tournament where university teams compete in esports and academic challenges and, thereby, showcasing the best flex players who can think, create, and compete on a world stage. We showcase talent that will lead digital industries, not just play in them."
   },
   {
@@ -34,6 +34,7 @@ const sections = [
     color: "#ae1a20",
     photo: getPhoto("activities.jpg"),
     alt: "",
+    photoCredit: "Thomas Zeng",
     text: "AEWT's main event is the Esports Tournament, where participants come together to compete and test their skills in various games. Alongside the tournament, teams also engage in the academic side of esports through challenges that combine creativity and critical thinking, as well as honing their business, game design and debate skills.",
   },
   {
@@ -41,6 +42,7 @@ const sections = [
     color: "#6c0287",
     photo: getPhoto("eindhoven.jpg"),
     alt: "",
+    photoCredit: "Brainport Eindhoven",
     text: "Discover Eindhoven, the city hosting this year's edition of AEWT. Known for its innovative and creative technology, Eindhoven has plenty to offer beyond the tournament itself. During downtime between activities, each team can easily explore the city's landmarks using easily accessible public transportation.",
   },
 ];
@@ -69,6 +71,12 @@ export function Home() {
                 decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
               />
+              {/* Photo credit */}
+              {section.photoCredit && (
+                <span className="absolute bottom-2 right-3 z-10 rounded bg-black/40 px-2 py-1 text-[10px] text-white/75">
+                  Photo: {section.photoCredit}
+                </span>
+              )}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
             {/* Text box */}
