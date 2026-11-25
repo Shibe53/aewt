@@ -84,7 +84,7 @@ export function HomeHeader() {
         <img 
           src={logo} 
           alt="AEWT Logo" 
-          className="relative z-10 h-30 w-30 shrink-0 rounded-full border-[6px] border-[#ae1a20] object-cover sm:h-35 sm:w-35 lg:h-45 lg:w-45 transition-all duration-500 ease-out hover:scale-110 hover:shadow-[0_0_20px_rgba(250,204,21,0.95)]"
+          className="relative z-10 h-30 w-30 shrink-0 rounded-full border-[6px] border-[#ae1a20] object-cover sm:h-35 sm:w-35 lg:h-45 lg:w-45 transition-all duration-500 ease-out hover:scale-110 hover:shadow-[0_0_100px_rgba(250,204,21,0.95)]"
         />
         {/* Title */}
         <h1 className="title-appear mt-8 w-full text-center text-[clamp(2rem,4vw,3rem)] font-black leading-[1.05] tracking-tight text-[#6c0287]">
